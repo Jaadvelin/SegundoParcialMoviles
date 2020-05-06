@@ -34,14 +34,14 @@ class DetailViewController: UIViewController {
         }
         
         
-        
+        /*
         let posterUrl = URL(string: movie!.poster)
         getData(from: posterUrl!) { data, response, error in
             guard let data = data, error == nil else { return }
             DispatchQueue.main.async() {
                 self.posterImageView.image = UIImage(data: data)
             }
-        }
+        }*/
 
     
     }
