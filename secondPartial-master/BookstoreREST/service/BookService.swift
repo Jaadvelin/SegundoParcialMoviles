@@ -53,6 +53,9 @@ class BookService : NSObject {
         task.resume()
     }
 
+ 
+    
+    
     private func buildBookFromAPIResponse(_ response: [String: Any]) -> Book {
         let book = Book()
         
@@ -74,6 +77,8 @@ class BookService : NSObject {
         
         return book
     }
+    
+    
     
     private func buildBookListFromAPIResponse(_ list : [[String : Any]]) -> [Book] {
         var bookList: [Book] = []
@@ -103,5 +108,7 @@ class BookService : NSObject {
         
         return bookList
     }
+    
+    
     
 }

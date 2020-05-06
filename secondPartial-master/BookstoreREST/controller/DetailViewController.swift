@@ -25,8 +25,25 @@ class DetailViewController: UIViewController {
             titleLabel.text = detail.title
             authorLabel.text = detail.author
             descriptionLabel.text = detail.description
-
         }
+        
+        func getData(from url: URL,
+             completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+                  URLSession.shared.dataTask(with: url,
+                 completionHandler: completion).resume()
+        }
+        
+        
+        
+        let posterUrl = URL(string: movie!.poster)
+        getData(from: posterUrl!) { data, response, error in
+            guard let data = data, error == nil else { return }
+            DispatchQueue.main.async() {
+                self.posterImageView.image = UIImage(data: data)
+            }
+        }
+
+    
     }
 
     override func viewDidLoad() {
