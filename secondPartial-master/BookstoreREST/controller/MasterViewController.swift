@@ -10,17 +10,22 @@ import UIKit
 
 class MasterViewController: UITableViewController {
 
+    //MARK: Outlets
     var detailViewController: DetailViewController? = nil
+    
+    //MARK: Properties
     let service = BookService()
     var bookList : [Book] = []
 
-
+    //MARK: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+        refresh()
         
         if let split = splitViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+           
         }
     }
 
@@ -66,6 +71,7 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let book = bookList[indexPath.row]
         cell.textLabel!.text = book.title
+        
 
         return cell
     }

@@ -26,13 +26,17 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         configureView()
+        
+        
     }
 
     var detailItem: Book? {
         didSet {
-            // Update the view.
+              // Update the view.
         }
     }
+    
+    
 
 
 }
